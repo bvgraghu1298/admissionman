@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Location a Travel Category </title>
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<meta name="keywords" content="Location Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href=' http://fonts.googleapis.com/css?family=PT+Sans:400,700 ' rel='stylesheet' type='text/css'>
+<link href='  http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300 ' rel='stylesheet' type='text/css'>
+<script src="{%static 'js/jquery.min.js' %}"></script>
+<!-- Mega Menu -->
+<link href="{% static 'css/megamenu.css' %}" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="{%static 'js/megamenu.js' %}"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<!-- Mega Menu -->
+</head></script>
+<body>
+<!-- banner -->
+	<div class="header">
+	<h2 style:"color:#FFFFFF;"> Sign up</h2>
+
+		<div class="container">
+
+				<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<span class="menu"> </span>
+
+			  		<ul class="navig megamenu skyblue">
+
+							<div class="megapanel">
+								<div class="na-left">
+
+								</div>
+								<div class="na-right">
+									<ul class="grid-img-list">
+
+
+										<div class="clearfix"> </div>
+									</ul>
+								</div>
+								<div class="clearfix"> </div>
+		    				</div>
+						</li>
+
+						<div class="clearfix"></div>
+					</ul>
+					<script>
+					$("span.menu").click(function(){
+						$(".top-nav ul").slideToggle(300, function(){
+						});
+					});
+				</script>
+			</div>
+			<div class="head-right">
+				<ul class="number">
+					<li><a href="/accounts/signup"><i class="phone"> </i>Sign Up</a></li>
+					<li><a href="contact.html"><i class="mail"> </i>Contact</a></li>
+                    {% if user.is_authenticated %}
+                      <li><a href="/accounts/logout/"><i class="mail"> </i>logout</a></li>
+                    {% else %}
+                      <li><a href="/accounts/login/"><i class="mail"> </i>login</a></li>
+                    {% endif %}
+						<div class="clearfix"> </div>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+
+ <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+{% block content %}
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
+ </div>
